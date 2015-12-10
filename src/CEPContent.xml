@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<cep xmlns="http://camitk.imag.fr/cepcoreschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://camitk.imag.fr/cepcoreschema Cep.xsd">
+
+  <name>DicomConnectorCEP</name>
+
+  <contact>
+    <email>jean-loup.haberbusch@imag.fr</email>
+  </contact>
+
+  <description>A CEP to try to make a DICOM connection from CamiTK</description>
+
+  <componentExtensions>
+    <componentExtension>
+      <name>DicomConnector</name>
+      <description>Dicom connection management</description>
+      <components>
+        <component>
+          <name>DicomConnectorComponent</name>
+          <description>A component to establish connection to a DICOM Server and that retrieve the informations from.</description>
+          <representation>None</representation>
+          <fileSuffix>dcm</fileSuffix>
+        </component>
+      </components>
+      <dependencies>
+        <dependency name="gdcm" type="library"/>
+      </dependencies>
+    </componentExtension>
+  </componentExtensions>
+
+</cep>
