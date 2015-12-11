@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<cep xmlns="http://camitk.imag.fr/cepcoreschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://camitk.imag.fr/cepcoreschema Cep.xsd">
+
+  <name>src</name>
+
+  <contact>
+    <email>jean-loup.haberbusch@imag.fr</email>
+  </contact>
+
+  <description>Source directory for the DicomConnector Action</description>
+
+  <actionExtensions>
+    <actionExtension>
+      <name>DicomConnector</name>
+      <description>Establish a connection to a Dicom Modality</description>
+      <actions>
+        <action>
+          <name>doConnection</name>
+          <description>Make connection between CamiTK and Dicom modality</description>
+          <component>ImageComponent</component>
+          <classification>
+            <family>DicomConnector</family>
+            <tag>Dicom</tag>
+            <tag>Connector</tag>
+          </classification>
+        </action>
+        <action>
+          <name>CreateDcmDirectory</name>
+          <description>Create the directory where files will be written</description>
+          <component>ImageComponent</component>
+          <classification>
+            <family>DicomConnector</family>
+            <tag>Dicom</tag>
+            <tag>Directory</tag>
+          </classification>
+        </action>
+      </actions>
+      <dependencies>
+        <dependency name="gdcm" type="library"/>
+      </dependencies>
+    </actionExtension>
+  </actionExtensions>
+
+</cep>
