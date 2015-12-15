@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no" ?>
+<cep xmlns="http://camitk.imag.fr/cepcoreschema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://camitk.imag.fr/cepcoreschema Cep.xsd">
+
+  <name>DicomConnector</name>
+
+  <contact>
+    <email>jean-loup.haberbusch@imag.fr</email>
+  </contact>
+
+  <description>This component is able to establish a connection to a DICOM Modality.</description>
+
+  <actionExtensions>
+    <actionExtension>
+      <name>doConnectionExtension</name>
+      <description>Extension for doConnection action</description>
+      <actions>
+        <action>
+          <name>doConnection</name>
+          <description>Perform connection to the DICOM Modality</description>
+          <component>ImageComponent</component>
+          <classification>
+            <family>Dicom Connector</family>
+          </classification>
+          <parameters>
+            <parameter defaultValue="camitk-pacs" description="Calling AE Title" editable="true" name="AETitle" type="QString" unit=""/>
+            <parameter defaultValue="104" description="Port used for incoming association" editable="true" name="port" type="int" unit=""/>
+            <parameter defaultValue="AE Hostname" description="Write a description about your parameter" editable="true" name="hostname" type="QString" unit=""/>
+          </parameters>
+        </action>
+      </actions>
+      <dependencies>
+        <dependency name="gdcm" type="library"/>
+      </dependencies>
+    </actionExtension>
+  </actionExtensions>
+
+</cep>
